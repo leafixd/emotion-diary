@@ -1,0 +1,44 @@
+/* public 폴더에 저장되어있는 파일로 글꼴 지정하기 */
+@font-face {
+    font-family: "NanumPenScript";
+    src: url("/NanumPenScript-Regular.ttf");
+}
+
+/* 웹에서 폰트 가져오기 - 온글잎 의연체 */
+@font-face {
+    font-family: 'Uiyeun';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105@1.1/Uiyeun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ownglyph_ryuttung-Rg';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405-2@1.0/Ownglyph_ryuttung-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+html,
+body{
+    margin: 0px;
+    width: 100%;
+    background-color: rgb(246,246,246);
+}
+/* 메인컴포넌트 */
+/* 리액트앱에서는 body 태그 안의 div태그의 id가 root인 요소아래에 루트컴포가 렌더링되기때문*/
+#root{
+    background-color: white;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+/* vh 뷰포트 하이트 현재 브라우젖의 스크린의 높이 */
+    min-height: 100vh;
+    height: 100%;
+    box-shadow: rgba(100,100,100, 0.2) 0px 0px 29px 0px;
+    padding: 0px 20px;
+
+}
+
+body * {
+    font-family: 'Ownglyph_ryuttung-Rg';
+}
