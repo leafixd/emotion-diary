@@ -23,6 +23,8 @@ body{
     margin: 0px;
     width: 100%;
     background-color: rgb(246,246,246);
+    /* 모든 페이지를 다 감싸도록 설정 */
+    display: flex;
 }
 /* 메인컴포넌트 */
 /* 리액트앱에서는 body 태그 안의 div태그의 id가 root인 요소아래에 루트컴포가 렌더링되기때문*/
