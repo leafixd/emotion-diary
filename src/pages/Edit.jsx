@@ -5,24 +5,14 @@ import Editor from "../components/Editor";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DiaryStateContext, DiaryDispatchContext } from "../App";
+import useDiary from "../hooks/useDiary";
 
 const Edit = () =>{
     const params = useParams();
     const nav = useNavigate();
     const {onUpdate, onDelete} = useContext(DiaryDispatchContext);
-    const data = useContext(DiaryStateContext);
-    const [curDiaryItem, setCurDiaryItem] = useState(); 
-
-    useEffect(()=>{
-        const currentDiaryItem = data.find(
-            (item)=>String(item.id) === String(params.id));
-        if(!currentDiaryItem){//잘못들어간 경우
-            window.alert("존재하지 않는 일기입니다");
-            nav('/',{replace:true});
-        }
-        setCurDiaryItem(currentDiaryItem);
-    },[params.id, data]);
-
+    const curDiaryItem = useDiary(params.id);
+    
     const onSubmit = (input) =>{
         if(window.confirm("일기를 정말 수정할까요?")){
             onUpdate(params.id, input.createdDate.getTime(), input.emotionId, input.content);
