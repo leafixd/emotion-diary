@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
 import { DiaryStateContext } from '../App';
+import usePageTitle from "../hooks/usePageTitle";
 
 const getMonthlyData = (pivotDate, data) =>{
     // 이번달의 시작- 1일 0시 0분 0초 지정& 비교하기 쉽게 숫자값으로
@@ -23,6 +24,8 @@ const Home = () =>{
     const onIncreaseMonth = () =>{
         setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() +1 ));
     };
+    usePageTitle(`김리프의 감정일기장`);
+    
 
     const monthlyData = getMonthlyData(pivotDate, data);
     return (<div>
